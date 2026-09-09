@@ -47,6 +47,10 @@ export const s = {
     fontWeight: 800,
     letterSpacing: -0.3,
   },
+  logoImg: {
+    height: 28,
+    display: "block",
+  },
   stepBar: {
     display: "flex",
     flexWrap: "wrap",

@@ -13,6 +13,7 @@ import SignupPage from "./screens/SignupPage";
 import MyPageScreen from "./screens/MyPageScreen";
 import { filterParsedToc, getLeafUnits, rangeMinutes } from "./lib/toc";
 import { s } from "./theme";
+import logo from "./assets/logo.png";
 
 const API_BASE = "http://localhost:8000";
 const AUTH_API_BASE = "http://localhost:8081";
@@ -291,8 +292,7 @@ if (location.pathname === "/mypage") {
   return (
     <div style={s.page}>
       <div style={s.header}>
-        <span style={s.logoDot} />
-        <span style={s.logoText}>Planit</span>
+        <img src={logo} alt="Planit" style={s.logoImg} />
       </div>
 
       <div style={s.stepBar}>

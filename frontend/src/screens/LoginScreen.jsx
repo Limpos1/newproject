@@ -8,6 +8,7 @@ import {
 } from "firebase/auth";
 import { auth } from "../firebase";
 import { s, theme } from "../theme";
+import logo from "../assets/logo.png";
 
 // =========================================================================
 // 로그인 화면 — "로그인 백엔드(Planit-Web-Auth-Plan-Quiz, 8081번 포트)"를
@@ -165,8 +166,7 @@ export default function LoginScreen({ onLoggedIn }) {
   return (
     <div style={s.page}>
       <div style={s.header}>
-        <span style={s.logoDot} />
-        <span style={s.logoText}>Planit</span>
+        <img src={logo} alt="Planit" style={s.logoImg} />
       </div>
 
       <div style={s.card}>
