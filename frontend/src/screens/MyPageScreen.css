@@ -1,0 +1,265 @@
+@import url("https://fonts.googleapis.com/css2?family=Gowun+Dodum&family=JetBrains+Mono:wght@400;700&family=Noto+Sans+KR:wght@400;500;600;700&display=swap");
+
+/* =========================================================
+   Planit 마이페이지 - 스타일시트
+   디자인 시스템: 라벤더로즈 팔레트
+   ========================================================= */
+
+:root {
+  --bg: #FBEFEF;
+  --surface: #FFFBF9;
+  --ink: #4B3B47;
+  --ink-soft: #8B7488;
+  --ink-faint: #C2A9B4;
+  --lav: #C5B3D3;
+  --lav-deep: #A98FC2;
+  --lav-soft: #EFE8F5;
+  --accent: #F5CBCB;
+  --accent-deep: #DFA9A9;
+  --accent-soft: #FFE2E2;
+  --accent-ink: #A9576B;
+  --line: #F7DCE0;
+  --shadow-sm: 0 2px 8px rgba(75, 59, 71, 0.06);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--ink);
+  font-family: 'Noto Sans KR', sans-serif;
+}
+
+/* ---------------------------------------------------------
+   전체 레이아웃
+--------------------------------------------------------- */
+.mypage2 {
+  display: grid;
+  grid-template-columns: 280px 1fr;
+  gap: 24px;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 32px;
+}
+
+@media (max-width: 900px) {
+  .mypage2 { grid-template-columns: 1fr; padding: 16px; }
+  .dash-top-row { grid-template-columns: 1fr; }
+  .dash-analysis-row { grid-template-columns: 1fr; }
+}
+
+/* ---------------------------------------------------------
+   프로필 사이드바
+--------------------------------------------------------- */
+.profile-sidebar {
+  background: var(--surface);
+  border: 1.5px solid var(--line);
+  border-radius: 24px;
+  padding: 28px 22px;
+  text-align: center;
+  height: fit-content;
+}
+
+.avatar-lg {
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  background: var(--lav-deep);
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 22px;
+  font-weight: 700;
+  margin: 0 auto 12px;
+}
+
+.profile-sidebar .name {
+  font-family: 'Gowun Dodum', sans-serif;
+  font-size: 17px;
+  margin-bottom: 20px;
+}
+
+.ps-stat-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.ps-stat {
+  background: var(--lav-soft);
+  border-radius: 14px;
+  padding: 12px 8px;
+}
+.ps-stat .ic { font-size: 16px; margin-bottom: 4px; }
+.ps-stat .v { font-family: 'JetBrains Mono', monospace; font-weight: 700; font-size: 15px; }
+.ps-stat .l { font-size: 10px; color: var(--ink-soft); }
+
+/* 진행바(다음 뱃지까지 / 학습목표 미니카드에서 재사용) */
+.ps-progress .row {
+  display: flex;
+  justify-content: space-between;
+  font-size: 11.5px;
+  color: var(--ink-soft);
+  margin-bottom: 6px;
+}
+.ps-progress .track {
+  height: 6px;
+  background: var(--line);
+  border-radius: 100px;
+  margin-bottom: 18px;
+  overflow: hidden;
+}
+.ps-progress .fill {
+  height: 100%;
+  background: var(--accent-deep);
+  border-radius: 100px;
+}
+
+.ps-badges-label { font-size: 11.5px; color: var(--ink-soft); margin-bottom: 10px; }
+.ps-badges-row { display: flex; gap: 8px; justify-content: center; }
+.ps-badges-row .b {
+  width: 34px; height: 34px; border-radius: 50%;
+  background: var(--accent-soft);
+  display: flex; align-items: center; justify-content: center;
+  font-size: 15px;
+}
+
+/* ---------------------------------------------------------
+   상단 2개 카드 (오늘 할일 / 학습목표)
+--------------------------------------------------------- */
+.dash-top-row {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 16px;
+  margin-bottom: 16px;
+}
+
+.top-card {
+  background: var(--surface);
+  border: 1.5px solid var(--line);
+  border-radius: 20px;
+  padding: 18px;
+}
+.top-card .head { display: flex; gap: 12px; align-items: center; margin-bottom: 12px; }
+.top-card .title { font-weight: 700; font-size: 14px; color: var(--ink); }
+.top-card .lbl { font-size: 11.5px; color: var(--ink-soft); }
+
+.ic-box {
+  width: 38px; height: 38px; border-radius: 12px;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 16px; flex: 0 0 auto;
+}
+
+.sub-stats { display: flex; gap: 10px; font-size: 11px; color: var(--ink-soft); flex-wrap: wrap; }
+.today-list { font-size: 12px; color: var(--ink-soft); display: flex; flex-direction: column; gap: 6px; }
+
+/* ---------------------------------------------------------
+   학습분석 카드 + 학습 리포트(레이더차트) 카드
+--------------------------------------------------------- */
+.dash-analysis-row {
+  display: grid;
+  grid-template-columns: 1.3fr 1fr;
+  gap: 18px;
+  margin-bottom: 16px;
+  align-items: start;
+}
+
+.analysis-card {
+  background: var(--surface);
+  border: 1.5px solid var(--line);
+  border-radius: 20px;
+  padding: 26px;
+}
+
+.ac-head { display: flex; justify-content: space-between; align-items: center; margin-bottom: 16px; }
+.ac-head h3 { font-family: 'Gowun Dodum', sans-serif; font-weight: 400; font-size: 17px; margin: 0; }
+
+.view-toggle { display: flex; gap: 4px; background: var(--lav-soft); border-radius: 100px; padding: 3px; }
+.view-toggle button {
+  border: none; background: transparent;
+  font-size: 11px; font-weight: 600; color: var(--ink-soft);
+  padding: 5px 12px; border-radius: 100px; cursor: pointer;
+  font-family: 'Noto Sans KR', sans-serif;
+}
+.view-toggle button.active { background: var(--lav-deep); color: #fff; }
+
+.streak-banner {
+  background: var(--accent-soft);
+  border-radius: 12px;
+  padding: 10px 14px;
+  font-size: 12.5px;
+  font-weight: 600;
+  color: var(--accent-ink);
+  margin-bottom: 14px;
+}
+
+.goal-stats .row {
+  display: flex; justify-content: space-between;
+  font-size: 12px; color: var(--ink-soft);
+  padding: 8px 0; border-top: 1px solid var(--line);
+}
+.goal-stats .row:first-child { border-top: none; }
+.goal-stats b { color: var(--ink); }
+
+.sep { border: none; border-top: 1px solid var(--line); margin: 14px 0; }
+
+/* 실제 학습시간 vs 비교값(평균) 막대그래프 */
+.mini-bars { display: flex; justify-content: space-between; align-items: flex-end; height: 130px; gap: 6px; }
+.colb { flex: 1; display: flex; flex-direction: column; align-items: center; justify-content: flex-end; height: 100%; gap: 6px; }
+.bar-pair { display: flex; align-items: flex-end; gap: 3px; height: 100%; }
+.bar-pair .actual { width: 12px; background: var(--lav-soft); border-radius: 5px 5px 2px 2px; min-height: 3px; }
+.bar-pair .avg { width: 12px; background: var(--line); border-radius: 5px 5px 2px 2px; min-height: 3px; }
+.colb.today .bar-pair .actual { background: var(--lav-deep); }
+.colb .lbl { font-size: 10.5px; color: var(--ink-soft); }
+.colb.today .lbl { color: var(--ink); font-weight: 700; }
+
+.mini-bars-legend { display: flex; gap: 14px; font-size: 10.5px; color: var(--ink-soft); justify-content: center; margin-top: 10px; }
+.mini-bars-legend .dot { width: 8px; height: 8px; border-radius: 2px; display: inline-block; margin-right: 4px; vertical-align: middle; }
+
+/* 평균 대비 성장률 배지 */
+.growth-row { display: flex; align-items: center; gap: 8px; font-size: 12px; color: var(--ink-soft); margin-bottom: 14px; }
+.growth-badge {
+  display: inline-flex; align-items: center; gap: 3px;
+  font-size: 11.5px; font-weight: 700;
+  padding: 4px 10px; border-radius: 100px;
+  font-family: 'JetBrains Mono', monospace;
+}
+.growth-badge.up   { background: #E7F3E9; color: #3C8C55; }
+.growth-badge.down { background: #FBEAEA; color: #C0574B; }
+.growth-badge.flat { background: var(--lav-soft); color: var(--ink-soft); }
+
+.callout { display: flex; gap: 8px; font-size: 12px; color: var(--ink-soft); margin-bottom: 8px; line-height: 1.5; }
+.callout .q { color: var(--lav-deep); font-weight: 700; }
+
+.radar-wrap { position: relative; height: 220px; margin-bottom: 14px; }
+
+/* ---------------------------------------------------------
+   획득한 뱃지 섹션
+--------------------------------------------------------- */
+.badge-section {
+  background: var(--surface);
+  border: 1.5px solid var(--line);
+  border-radius: 20px;
+  padding: 26px;
+}
+.badge-section h3 { font-family: 'Gowun Dodum', sans-serif; font-weight: 400; font-size: 17px; margin: 0 0 16px; }
+
+.badge-card-grid { display: flex; flex-wrap: wrap; gap: 18px; }
+.badge-earned { display: flex; flex-direction: column; align-items: center; gap: 6px; width: 76px; }
+.badge-earned .ic {
+  width: 52px; height: 52px; border-radius: 50%;
+  background: var(--accent-soft);
+  display: flex; align-items: center; justify-content: center;
+  font-size: 22px;
+  overflow: hidden;
+}
+.badge-earned .ic img { width: 100%; height: 100%; object-fit: cover; border-radius: 50%; }
+.ps-badges-row .b { overflow: hidden; }
+.ps-badges-row .b img { width: 100%; height: 100%; object-fit: cover; border-radius: 50%; }
+.badge-earned .lbl { font-size: 10.5px; color: var(--ink-soft); text-align: center; }
+.badge-empty { font-size: 12.5px; color: var(--ink-soft); }
