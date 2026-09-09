@@ -343,7 +343,7 @@ export default function MainScreen({ onStartReplan }) {
         <>
           <div style={sidebarOverlay} onClick={() => setSidebarOpen(false)} />
           <div style={sidebarPanel}>
-            <img src={logo} alt="Planit" style={{ height: 24, marginBottom: 12 }} />
+            <img src={logo} alt="Planit" style={{ height: 24, width: "auto", alignSelf: "flex-start", marginBottom: 12 }} />
             <span
               style={sidebarItem}
               onClick={() => {
