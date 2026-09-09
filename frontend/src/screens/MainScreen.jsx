@@ -1,6 +1,7 @@
 import { useEffect, useMemo, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { theme } from "../theme";
+import logo from "../assets/logo.png";
 
 const API_BASE = "http://localhost:8000";
 // 팀원의 "할일 체크리스트" 백엔드(Planit-Web-Checklist-main, 8080번 포트).
@@ -287,7 +288,7 @@ export default function MainScreen({ onStartReplan }) {
     return (
       <div style={page}>
         <div style={topbar}>
-          <strong>Planit</strong>
+          <img src={logo} alt="Planit" style={{ height: 28 }} />
         </div>
         <p style={{ padding: 28, color: theme.colors.danger }}>{error}</p>
       </div>
@@ -297,7 +298,7 @@ export default function MainScreen({ onStartReplan }) {
     return (
       <div style={page}>
         <div style={topbar}>
-          <strong>Planit</strong>
+          <img src={logo} alt="Planit" style={{ height: 28 }} />
         </div>
         <p style={{ padding: 28, color: theme.colors.textSoft }}>학습 플랜을 불러오는 중...</p>
       </div>
@@ -334,7 +335,7 @@ export default function MainScreen({ onStartReplan }) {
     <div style={page}>
       <div style={topbar}>
         <div style={{ display: "flex", alignItems: "center", gap: 16 }}>
-          <strong style={{ fontSize: 18 }}>Planit</strong>
+          <img src={logo} alt="Planit" style={{ height: 28 }} />
         </div>
       </div>
       <button style={hamburgerBtn} title="메뉴" onClick={() => setSidebarOpen(true)}>☰</button>
@@ -342,7 +343,7 @@ export default function MainScreen({ onStartReplan }) {
         <>
           <div style={sidebarOverlay} onClick={() => setSidebarOpen(false)} />
           <div style={sidebarPanel}>
-            <strong style={{ fontSize: 16, marginBottom: 12 }}>Planit</strong>
+            <img src={logo} alt="Planit" style={{ height: 24, marginBottom: 12 }} />
             <span
               style={sidebarItem}
               onClick={() => {
